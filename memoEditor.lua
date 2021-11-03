@@ -40,8 +40,6 @@ end
 
 function getMemo(obj,color,alt)
  local zone=CheckForObjects()
- log(zone)
- log(zone[1].hit_object.memo)
  if zone then
   self.editInput({index=0,value=zone[1].hit_object.memo})
  end
