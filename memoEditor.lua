@@ -25,6 +25,12 @@ function onLoad()
  params.click_function='setMemo'
  self.createButton(params)
 
+ params.position[3]=2.4
+ params.label='Clear script_state'
+ params.tooltip="Sets the object's script_state to nil"
+ params.click_function='clearSave'
+ self.createButton(params)
+
  params.position[3]=1.8
  params.tooltip="The object's Memo"
  params.label='Enter Memo'
@@ -57,6 +63,13 @@ function setMemo(obj,color,alt)
  local Memo=self.getInputs()[1].value
  for _,collision in pairs(zone)do
   collision.hit_object.memo=Memo
+ end
+end
+
+function clearSave(obj,color,alt)
+ local zone=CheckForObjects()
+ for _,collision in pairs(zone)do
+  collision.hit_object.script_state=nil
  end
 end
 
