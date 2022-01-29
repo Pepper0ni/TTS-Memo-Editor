@@ -54,7 +54,7 @@ end
 function logData(obj,color,alt)
  local zone=CheckForObjects()
  for _,collision in pairs(zone)do
-  log(collision.hit_object.getData())
+  Notes.setNotes(logString(collision.hit_object.getData()))
  end
 end
 
